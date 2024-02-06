@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
 const DessertSchema = new mongoose.Schema({
-  title: {
+  name: {
     type: String,
     required: true,
   },
-  description: {
-    type: String,
+  price: {
+    type: Float,
     required: true
   }
 });

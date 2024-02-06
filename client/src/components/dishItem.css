@@ -1,0 +1,15 @@
+.listItem {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    text-align: center !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.selected {
+    background-color: rgb(195, 193, 193) !important;
+}
+
+.price {
+    margin-right: 0px;
+}

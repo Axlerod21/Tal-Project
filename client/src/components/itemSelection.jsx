@@ -1,10 +1,13 @@
 import "./itemSelection.css";
-import { Button, List, ListSubheader  } from "@mui/material";
+import { List, Card  } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
 import { getAppetizers, getMains, getDesserts } from "../api/api";
 import DishItem from "./dishItem";
+import { useState } from "react";
 
 const ItemSelection = ({ category }) => {
+  const [dishCount, setDishCount] = useState(0);
+
   let dishApi;
 
   if (category === "Appetizer") {
@@ -21,7 +24,7 @@ const ItemSelection = ({ category }) => {
   });
 
   if (isError) {
-    console.log(`Error fetching Todo list: ${error}`);
+    console.log(`Error fetching Dish list: ${error}`);
     return <div>An error occured!</div>;
   }
 
@@ -30,25 +33,20 @@ const ItemSelection = ({ category }) => {
   }
 
   return (
-    <div className="selectionContainer">
+    <Card className="selectionContainer">
       <div className="selectionHeader">
-        <div>Counter</div>
-        <Button variant="contained" className="addButton">
-          Add
-        </Button>
         <div className="category">{category}</div>
+        <div className="counter">{dishCount}</div>
       </div>
-      {/* <List className="selectionList">
-        {data.map((apps) => (
-          <DishItem dish={apps} />
-        ))}
-      </List> */}
       <List className="selectionList">
         {data.map((app) => (
-          <DishItem dish={app}/>
+          <div>
+            <DishItem dish={app} dishCounter={dishCount} setDishCounter={setDishCount}/>
+            <div className="divider">* * * * * * *</div>
+          </div>
         ))}
       </List>
-    </div>
+    </Card>
   );
 };
 

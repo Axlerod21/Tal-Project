@@ -1,14 +1,27 @@
-import React from "react"
-import { ListItemButton } from '@mui/material';
+import "./dishItem.css"
+import React, { useState } from "react"
+import { ListItemButton, ListItemText} from '@mui/material';
 
-const DishItem = ({ dish }) => {
-    const addDish = () => {
-        
+const DishItem = ({ dish, dishCounter, setDishCounter }) => {
+    const [style, setStyle] = useState("unselected")
+
+    const dishSelect = () => {
+        if(style === "selected") {
+            setDishCounter(dishCounter - 1)
+            setStyle("unselected")
+        } 
+        else if(dishCounter === 3) return;
+        else {
+            setDishCounter(dishCounter + 1)
+            setStyle("selected");
+        }
     }
 
     return (
-        <ListItemButton onClick={addDish}>{dish.name}</ListItemButton>
-        // <div>{dish.name}</div>
+        <ListItemButton className={`listItem ${style}`} onClick={dishSelect}>
+            <ListItemText>{dish.name}</ListItemText>
+            <ListItemText>{dish.price}</ListItemText>
+        </ListItemButton>
     )
 }
 

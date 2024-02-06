@@ -1,9 +1,10 @@
 .selectionContainer {
-    border: 1px black solid;
+    background-color: white;
+    border: 5px rgb(234, 176, 42) solid;
     border-radius: 15px;
-    max-width: 40%;
+    width: 30%;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .selectionHeader {
@@ -12,7 +13,7 @@
     height: 50px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .addButton {
@@ -21,14 +22,28 @@
 }
 
 .category {
-    border: 1px black solid;
-    padding: 7px;
+    margin-left: 20px;
+    font-family: PT Mono;
+    font-weight: bolder;
+}
+
+.counter {
+    margin-right: 20px;
+    font-family: PT Mono;
+    font-weight: bolder;
 }
 
 .selectionList {
-    max-height: 235px;
+    /* height: 480px; */
     width: 100%;
     overflow: auto;
+    font-family: Helvetica, sans-serif;
+    font-size: large;
+}
+
+.divider {
+    text-align: center;
+    color: #a3a1a1;
 }
 
 ::-webkit-scrollbar {

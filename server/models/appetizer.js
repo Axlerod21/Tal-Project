@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
 const AppetizerSchema = new mongoose.Schema({
-  title: {
+  name: {
     type: String,
     required: true,
   },
-  description: {
+  price: {
     type: String,
     required: true
   }
