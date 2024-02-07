@@ -27,6 +27,11 @@
     font-weight: bolder;
 }
 
+.price {
+    font-family: PT Mono;
+    font-weight: bolder;
+}
+
 .counter {
     margin-right: 20px;
     font-family: PT Mono;

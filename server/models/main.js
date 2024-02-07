@@ -5,10 +5,6 @@ const DishSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  price: {
-    type: Float,
-    required: true
-  }
 });
 
 const Dish = mongoose.model("mains", DishSchema);

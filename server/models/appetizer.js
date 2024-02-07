@@ -5,10 +5,6 @@ const AppetizerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  price: {
-    type: String,
-    required: true
-  }
 });
 
 const Appetizer = mongoose.model("appetizers", AppetizerSchema);

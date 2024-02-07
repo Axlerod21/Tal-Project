@@ -5,10 +5,6 @@ const DessertSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  price: {
-    type: Float,
-    required: true
-  }
 });
 
 const Dessert = mongoose.model("desserts", DessertSchema);

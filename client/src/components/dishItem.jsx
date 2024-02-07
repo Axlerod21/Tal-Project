@@ -1,6 +1,6 @@
 import "./dishItem.css"
 import React, { useState } from "react"
-import { ListItemButton, ListItemText} from '@mui/material';
+import { ListItemButton, ListItemText } from '@mui/material';
 
 const DishItem = ({ dish, dishCounter, setDishCounter }) => {
     const [style, setStyle] = useState("unselected")
